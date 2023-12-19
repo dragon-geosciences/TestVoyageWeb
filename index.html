@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>W3.CSS Template</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <style>
-    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-    .w3-quarter img{margin-bottom: -6px; cursor: pointer}
-    .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+        body, h1, h2, h3, h4, h5 {font-family: "Raleway", sans-serif}
+        .w3-quarter img{margin-bottom: -6px; cursor: pointer}
+        .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
     </style>
-  </head>
+</head>
 <body class="w3-light-grey">
+
+<script>
+// Function to prompt for password
+function promptForPassword() {
+    // Use the prompt function to get the password from the user
+    var password = prompt("Enter the password:");
+
+    // Replace 'your_password' with the actual password you want to set
+    var correctPassword = "your_password";
+
+    // Check if the entered password is correct
+    if (password === correctPassword) {
+        // If the password is correct, show the content
+        showContent();
+    } else {
+        // If the password is incorrect, display an alert and reload the page
+        alert("Incorrect password. Please try again.");
+        location.reload();
+    }
+}
+
+// Function to show the content
+function showContent() {
+    // Set the display property of the content to 'block'
+    document.getElementById('content').style.display = 'block';
+}
+
+// Call the promptForPassword function when the page loads
+window.onload = promptForPassword;
+</script>
+
+<!-- Content that will be hidden until the correct password is entered -->
+<div id="content" style="display: none;">
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
@@ -142,6 +175,6 @@ function onClick(element) {
 
 </script>
 
-
+</div>
 </body>
 </html>
